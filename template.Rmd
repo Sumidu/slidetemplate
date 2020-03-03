@@ -1,0 +1,171 @@
+---
+title: "Slide Template"
+subtitle: "Real Title"
+author: "André Calero Valdez"
+institute: "RWTH Aachen University"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "footer-header.css"]
+    chakra: libs/remark-latest.min.js
+    nature:
+      titleSlideClass: [bottom, left]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+layout: true
+  
+<div class="my-header"><hr width = "50%", align="left", size = "1"></div>
+
+<div class="my-footer"><span>@sumidu    
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;calerovaldez.com</span></div> 
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+options(crayon.enabled = TRUE)
+```
+
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+
+txt_col <- "#888888"
+bkg_col <- "#000000"
+bkg_col_inv <- "#EEEEEE"
+
+xaringanthemer::write_xaringan_theme(
+  code_font_family = "Fira Code",
+  code_font_url = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css",
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  
+  header_h1_font_size = "24px",
+  text_font_size = "28px",
+  #header_h2_font_size = 18,
+  #header_h3_font_size = 16,
+  
+  inverse_background_color = bkg_col_inv,
+  background_color = bkg_col,
+  header_color = txt_col,
+  text_color = txt_col,
+  inverse_text_color = txt_col,
+  title_slide_text_color = txt_col,
+  title_slide_background_color = bkg_col_inv,
+  extra_css = list(".remark-slide-content" = list("line-height" = "1.4em"),
+                   ".remark-slide-number" = list("font-size" = "18px",
+                                                 "color" = txt_col,
+                                                 "position" = "absolute",
+                                                 "bottom" = "2px",
+                                                 "right" = "20px"),
+                   "h1" = list("letter-spacing" = "0.3em",
+                               "line-height" = "0.3em"))
+  
+)
+#mono_accent(base_color = "#8EBAE5",
+ #         header_font_google = google_font("Josefin Sans"))
+#mono_light(
+#  base_color = "#1c5253",
+#  header_font_google = google_font("Josefin Sans"),
+#  text_font_google   = google_font("Montserrat", "300", "300i"),
+#  code_font_google   = google_font("Droid Mono")
+#)
+```
+
+
+# THIS IS THE SLIDE HEADING
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+
+Sed diam nonumy eirmod tempor invidunt ut labore et dolore.
+
+Magna aliquyam erat, sed diam voluptua. At vero eos et accusam. 
+
+
+---
+class: center, middle
+
+# Centered
+
+### Test
+
+---
+class: inverse, center, middle
+
+# Get Started
+
+---
+
+# Hello World
+
+Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE}
+devtools::install_github("yihui/xaringan")
+```
+
+$MATH = \chi^2$
+
+---
+
+# remark.js vs xaringan
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;<sup>*</sup>
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+---
+
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
+
+---
+# SUMMARY
+<br>
+* Does it lack?
+* Super Duper?
+
+Do I know?
+
+---
+# BACKUP
